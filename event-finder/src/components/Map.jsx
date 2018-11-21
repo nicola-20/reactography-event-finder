@@ -39,7 +39,10 @@ const Map = ({events, country}) => {
       rootProps={{ "data-testid": "2" }}
     />
     console.log(map)
-    return map
+    return (<div className="MapBox">
+      {map}
+    </div>)
+      
 };
 
 Map.propTypes = {};

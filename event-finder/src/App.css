@@ -9,15 +9,22 @@
 }
 
 .Map {
-  margin-left: 50%;
-  margin-right: auto;
-  border: 1px;
   display: block;
+  border: solid 1px green;
+}
+
+.MapBox {
+  border: 1px solid purple;
+  width: 35%;
+  margin: 0 auto;
   text-align: center;
+  padding: 25px;
 }
 
 .Filter {
   padding: 10px;
+  border: solid 2px rgb(36, 118, 185);
+  border-radius: 8px;
   background-color: rgb(36, 118, 185);
 }
 .Filter input, select {
@@ -53,3 +60,38 @@
   font-weight: 500;
 }
 
+.EventList {
+  border: solid 1px brown;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  width: 100%;
+  /* display: inline-grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 100px;
+  grid-row-gap: 100px; */
+  
+  /* display: flex;
+  justify-content: space-evenly;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  align-content: space-around; */
+}
+
+.EventList ul {
+  list-style: none;
+}
+
+.EventList li {
+  border: solid 1px blue;
+  width: 30%;
+  height: 800px;
+  display: inline-block;
+  /* flex-direction: column;
+  flex-grow: 1;
+  align-items: center; */
+}
+
+.EventList h3 {
+  border: solid 1px pink;
+  height: 60px;
+}
