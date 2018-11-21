@@ -8,6 +8,7 @@ import { API_KEY } from "./config";
 import _ from "lodash";
 import eql from "deep-eql";
 import Map from "./components/Map";
+import Pie from "./components/Pie";
 
 class App extends Component {
   state = {
@@ -21,19 +22,24 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <Filter
-          country={this.state.country}
-          date={this.state.date}
-          keyword={this.state.keyword}
-          setCountry={this.setCountry}
-          setDate={this.setDate}
-          setCategory={this.setCategory}
-          city={this.state.city}
-          setKeyword={this.setKeyword}
-          setCity={this.setCity}
-        />
-        <Map events={this.state.events} country={this.state.country}/>
+        <div className="background">
+          <Header />
+          <Filter
+            country={this.state.country}
+            date={this.state.date}
+            keyword={this.state.keyword}
+            setCountry={this.setCountry}
+            setDate={this.setDate}
+            setCategory={this.setCategory}
+            city={this.state.city}
+            setKeyword={this.setKeyword}
+            setCity={this.setCity}
+          />
+          <div className="charts">
+            <Map events={this.state.events} country={this.state.country}/>
+            <Pie events={this.state.events} category={this.state.category}/>
+          </div>
+        </div>
         <Events events={this.state.events} />
       </div>
     );
@@ -44,6 +50,10 @@ class App extends Component {
       this.getEvents();
     }
   }
+
+  // componentDidMount() {
+  //   this.getEvents()
+  // }
 
   getEvents = _.debounce(
     () =>

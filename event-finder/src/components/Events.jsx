@@ -1,6 +1,7 @@
 import React from "react";
 // import PropTypes from 'prop-types';
 import "../App.css";
+import Modal from './Modal'
 
 const Events = ({ events }) => {
   console.log(events, "in events");
@@ -21,33 +22,31 @@ const Events = ({ events }) => {
           }) => (
             <li key={id}>
               <h3>{name}</h3>
-              <img className="EventImage" src={images[0].url} alt="Event" />
+              <img className="EventImage" src={images[6].url} alt="Event" />
               <p>
-                Venue: {_embedded.venues[0].name || ""},{" "}
+                <strong>Venue: </strong>{_embedded.venues[0].name || ""},{" "}
                 {_embedded.venues[0].city.name || ""}
               </p>
-              <p>Date: {dates.start.localDate}</p>
+              <p><strong>Date: </strong>{dates.start.localDate}</p>
               <p>
-                Price:{" "}
+                <strong>Price:{" "}</strong>
                 {priceRanges
                   ? priceRanges[0].max.toFixed(2)
                   : "No Longer Available"}{" "}
                 {priceRanges ? priceRanges[0].currency : ""}
               </p>
               <p>
-                Category:{" "}
-                {/* {classifications[0].segment ? classifications[0].segment.name : ""} */}
+                <strong>Category:{" "}</strong>
+                {classifications ? classifications[0].segment ? classifications[0].segment.name : "" : ""}
               </p>
               <p>
-                Sub-Category:{" "}
-                {/* {classifications[0].genre ? classifications[0].genre.name : ""} */}
+                <strong>Sub-Category:{" "}</strong>
+                {classifications ? classifications[0].genre ? classifications[0].genre.name : "" : ""}
               </p>
-              {/* <p>Summary: {info}</p> */}
-              <img
-                className="EventImage"
-                src={seatmap ? seatmap.staticUrl : "seatmap"}
-                alt="seatmap"
-              />
+              { seatmap ? (
+                <Modal seatmap={seatmap}/>
+              ) :(<p> <strong> No seatmap available </strong></p>)}
+              
             </li>
           )
         )}

@@ -30,7 +30,7 @@ const Map = ({events, country}) => {
       options={{
         region: country === '' ? 'world' : country,
         displayMode: "markers",
-        colorAxis: { colors: ["green", "blue"] }
+        colorAxis: { colors: ["rgb(100, 178, 241)", "rgb(0, 59, 107)"] }
       }}
 
       // Note: you will need to get a mapsApiKey for your project.

@@ -9,17 +9,50 @@
   object-fit: cover;
 }
 
+.charts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.background {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.096), rgba(255, 255, 255, 0.342)), url("https://www.mumfordandsons.com/wp-content/uploads/2017/01/mumford-and-sons-live-show-1400-1.jpg");
+  margin: -8px;
+  margin-top: -40px;
+}
+
+.button {
+  font-family: "Poppins", sans-serif;
+}
+
 .Map {
   display: block;
-  border: solid 1px green;
 }
 
 .MapBox {
-  border: 1px solid purple;
+  border-radius: 10px;
   width: 35%;
   margin: 0 auto;
   text-align: center;
   padding: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255);
+}
+
+.PieChartBox {
+  display: inline-block;
+  text-align: center;
+  margin: auto auto;
+  padding: 30px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255);
+}
+
+.pie {
+  margin: -10px;
+  padding: -30px;
 }
 
 .Filter {
@@ -27,6 +60,7 @@
   border: solid 2px rgb(36, 118, 185);
   border-radius: 8px;
   background-color: rgb(36, 118, 185);
+  margin-bottom: 10px;
 }
 .Filter input,
 select {
@@ -37,6 +71,7 @@ select {
   padding-left: 6px;
   height: 20px;
   width: 200px;
+  font-size: 15px;
 }
 .Filter input::placeholder {
   font-family: "Poppins", sans-serif;
@@ -60,23 +95,20 @@ select {
 .Header h1 {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  padding-top: 30px;
+  font-size: 60px;
 }
 
 .EventList {
-  border: solid 1px brown;
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   width: 100%;
-  /* display: inline-grid;
-  grid-template-columns: auto auto auto;
-  grid-column-gap: 100px;
-  grid-row-gap: 100px; */
-
-  /* display: flex;
-  justify-content: space-evenly;
-  flex-flow: row wrap;
-  align-items: flex-start;
-  align-content: space-around; */
+  background-color: rgb(36, 118, 185);
+  border-radius: 8px;
+  min-height: 300px;
+  margin-top: 0px;
+  padding-top: 10px;
 }
 
 .EventList ul {
@@ -87,26 +119,19 @@ select {
 }
 
 .EventList li {
-  border: solid 1px blue;
   width: 30%;
-  height: 800px;
+  height: 600px;
   display: inline-block;
-  /* justify-content: space-between; */
-  /* flex-direction: column;
-  flex-grow: 1;
-  align-items: center; */
+  margin: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
 }
 
 .EventList h3 {
-  border: solid 1px pink;
   height: 60px;
 }
 
-.EventList img {
-  border: solid 1px red;
-}
-
 .EventList img:hover {
-  transform: scale(2, 2);
+  transform: scale(1.5, 1.5);
   transition: 0.5s ease;
 }
