@@ -1,6 +1,6 @@
 import React from "react";
 // import PropTypes from 'prop-types';
-import '../App.css'
+import "../App.css";
 
 const Events = ({ events }) => {
   console.log(events, "in events");
@@ -22,11 +22,15 @@ const Events = ({ events }) => {
             <h3>{name}</h3>
             <img className="EventImage" src={images[0].url} alt="Event" />
             <p>
-              Venue: {_embedded.venues[0].name || ''}, {_embedded.venues[0].city.name || ''}
+              Venue: {_embedded.venues[0].name || ""},{" "}
+              {_embedded.venues[0].city.name || ""}
             </p>
             <p>Date: {dates.start.localDate}</p>
             <p>
-              Price: {priceRanges ? priceRanges[0].max : "No Longer Available"}{" "}
+              Price:{" "}
+              {priceRanges
+                ? priceRanges[0].max.toFixed(2)
+                : "No Longer Available"}{" "}
               {priceRanges ? priceRanges[0].currency : ""}
             </p>
             <p>
@@ -37,7 +41,11 @@ const Events = ({ events }) => {
               {classifications ? classifications[0].genre.name : ""}
             </p>
             {/* <p>Summary: {info}</p> */}
-            <img className="EventImage" src={seatmap ? seatmap.staticUrl : "seatmap"} alt="seatmap" />
+            <img
+              className="EventImage"
+              src={seatmap ? seatmap.staticUrl : "seatmap"}
+              alt="seatmap"
+            />
           </li>
         )
       )}
