@@ -15,7 +15,7 @@ const Filter = ({
 }) => {
   const categories = ["Sports", "Music", "Arts & Theatre", "Film"];
   return (
-    <form>
+    <form className="Filter">
       <select onChange={setCountry}>
         <option value="">Choose a Country...</option>
         {countries.map(countri => (
@@ -24,7 +24,12 @@ const Filter = ({
           </option>
         ))}
       </select>
-      <input value={date} type="date" onChange={setDate} />
+      <select onChange={setCategory}>
+        <option value="">Choose a Category...</option>
+        {categories.map(category => (
+          <option key={category}>{category}</option>
+        ))}
+      </select>
       <input
         onChange={setKeyword}
         value={keyword}
@@ -37,12 +42,7 @@ const Filter = ({
         type="text"
         placeholder="Search by town/city"
       />
-      <select onChange={setCategory}>
-        <option value="">Choose a Category...</option>
-        {categories.map(category => (
-          <option key={category}>{category}</option>
-        ))}
-      </select>
+      <input value={date} type="date" onChange={setDate} />
     </form>
   );
 };

@@ -7,12 +7,12 @@ import axios from "axios";
 import { API_KEY } from "./config";
 import _ from "lodash";
 import eql from "deep-eql";
-import Chart from "./components/Chart";
+import Map from "./components/Map";
 
 class App extends Component {
   state = {
     events: [],
-    country: "GB",
+    country: "",
     date: new Date(Date.now()).toISOString().slice(0, 10),
     keyword: "",
     category: "",
@@ -33,7 +33,7 @@ class App extends Component {
           setKeyword={this.setKeyword}
           setCity={this.setCity}
         />
-        <Chart />
+        <Map events={this.state.events} country={this.state.country}/>
         <Events events={this.state.events} />
       </div>
     );
@@ -55,7 +55,7 @@ class App extends Component {
             this.state.keyword
           }&classificationName=${this.state.category}&city=${
             this.state.city
-          }&sort=date,asc&startDateTime=${this.state.date}T15:00:00Z`
+          }&sort=date,asc&startDateTime=${this.state.date}T15:00:00Z&size=200`
         )
         .then(({ data }) => {
           if (data._embedded) {
@@ -70,7 +70,7 @@ class App extends Component {
   );
 
   setCountry = ({ target: { value } }) => {
-    const countryCode = value.slice(0, 3);
+    const countryCode = value.slice(0, 2);
     // console.log(countryCode);
     this.setState({ country: countryCode });
   };

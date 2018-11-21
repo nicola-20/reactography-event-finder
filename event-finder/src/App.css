@@ -2,4 +2,54 @@
   text-align: center;
 }
 
+.EventImage {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.Map {
+  margin-left: 50%;
+  margin-right: auto;
+  border: 1px;
+  display: block;
+  text-align: center;
+}
+
+.Filter {
+  padding: 10px;
+  background-color: rgb(36, 118, 185);
+}
+.Filter input, select {
+  margin: 10px;
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 3px;
+  padding-left: 6px;
+  height: 20px;
+  width: 200px;
+}
+.Filter input::placeholder {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  color: black;
+}
+.Filter select {
+  height: 28px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  color: black;
+}
+
+.Filter input[type="date"] {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  letter-spacing: 0.1em;
+  width: 150px;
+}
+
+.Header h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
 
