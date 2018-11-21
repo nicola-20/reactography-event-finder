@@ -1,14 +1,17 @@
 import React from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { countries } from "../data/countries";
 
 const Filter = ({
   country,
   date,
-  search,
+  keyword,
   setCountry,
   setDate,
-  setCategory
+  setCategory,
+  city,
+  setKeyword,
+  setCity
 }) => {
   const categories = ["Sports", "Music", "Arts & Theatre", "Film"];
   return (
@@ -21,12 +24,23 @@ const Filter = ({
           </option>
         ))}
       </select>
-      <input type="date" onChange={setDate} />
-      <input type="text" placeholder="Search for artist/venue" />
+      <input value={date} type="date" onChange={setDate} />
+      <input
+        onChange={setKeyword}
+        value={keyword}
+        type="text"
+        placeholder="Search by keyword"
+      />
+      <input
+        onChange={setCity}
+        value={city}
+        type="text"
+        placeholder="Search by town/city"
+      />
       <select onChange={setCategory}>
         <option value="">Choose a Category...</option>
         {categories.map(category => (
-          <option>{category}</option>
+          <option key={category}>{category}</option>
         ))}
       </select>
     </form>
