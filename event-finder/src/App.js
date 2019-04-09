@@ -4,7 +4,7 @@ import Filter from "./components/Filter";
 import Header from "./components/Header";
 import Events from "./components/Events";
 import axios from "axios";
-import { API_KEY } from "./config";
+// import { API_KEY } from "./config";
 import _ from "lodash";
 import eql from "deep-eql";
 import Map from "./components/Map";
@@ -61,7 +61,7 @@ class App extends Component {
         .get(
           `https://app.ticketmaster.com/discovery/v2/events.json?countryCode=${
             this.state.country
-          }&apikey=${API_KEY}&keyword=${
+          }&apikey=${`a3X5cnP8WEn1WjmfWDSmu2DyUUtP3fVL`}&keyword=${
             this.state.keyword
           }&classificationName=${this.state.category}&city=${
             this.state.city

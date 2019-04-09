@@ -1,7 +1,7 @@
 import React from "react";
 // import PropTypes from 'prop-types';
 import {Chart} from 'react-google-charts'
-import { Google_Maps_API_KEY } from '../config.js'
+// import { Google_Maps_API_KEY } from '../config.js'
 import '../App.css'
 
 const Map = ({events, country}) => {
@@ -35,7 +35,7 @@ const Map = ({events, country}) => {
 
       // Note: you will need to get a mapsApiKey for your project.
       // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-      mapsApiKey={Google_Maps_API_KEY}
+      mapsApiKey={`AIzaSyBG0SybP0EKWH3Jvwki7IR5AMyO_cUeeQc`}
       rootProps={{ "data-testid": "2" }}
     />
     console.log(map)
