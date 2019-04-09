@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hughp23/FE1-reactography.git"
+    "url": "git+https://github.com/nicola-20/FE1-reactography.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hughp23/FE1-reactography/issues"
+    "url": "https://github.com/nicola-20/FE1-reactography/issues"
   },
-  "homepage": "https://github.com/hughp23/FE1-reactography#readme"
+  "homepage": "https://github.com/nicola-20/FE1-reactography#readme"
 }
